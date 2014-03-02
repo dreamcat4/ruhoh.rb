@@ -68,20 +68,21 @@ class Ruhoh
 
     # Default paths to the 3 levels of the cascade.
     def paths
-      a = [
-        {
+      a = []
+      a << {
           "name" => "system",
           "path" => system
-        },
-        {
-          "name" => "base",
-          "path" => base
-        }
-      ]
+      } if system
+
       a << {
         "name" => "theme",
         "path" => theme
       } if theme
+
+      a << {
+          "name" => "base",
+          "path" => base
+      } if base
 
       a
     end
